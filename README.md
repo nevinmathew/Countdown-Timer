@@ -1,6 +1,6 @@
 # Countdown Timer
 
-A simple countdown timer built using React and Redux. This project demonstrates how to create a countdown timer that updates in real-time and persists across page reloads using Redux for state management. Additionally, the project is configured with Vite for optimized development.
+A simple countdown timer built using React and Redux toolkit. This project demonstrates how to create a countdown timer that updates in real-time and persists across page reloads using Redux toolkit for state management. Additionally, the project is configured with Vite for optimized development.
 
 ## Features
 
@@ -46,7 +46,7 @@ The project is configured with Vite for fast and optimized development. The Vite
 The countdown timer is implemented using React components and Redux state management. Here's a brief overview of how it works:
 
 - The `Countdown` component is responsible for rendering the countdown UI and updating the current time.
-- Redux is used to store the target date and current time.
+- Redux toolkit is used to store the target date and current time.
 - The `calculateTimeRemaining` function calculates the time remaining until the target date based on the current time.
 - The `checkAndUpdateTime` function checks if the target date has expired or needs to be updated, and updates it accordingly.
 - The countdown updates every second using setInterval, dispatching actions to update the current time in the Redux store.
