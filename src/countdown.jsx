@@ -3,7 +3,9 @@ import './App.css'
 
 import React, { useEffect, useMemo, useCallback } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setTargetDate, setCurrentTime, selectTargetDate, selectCurrentTime, checkAndUpdateTime, selectTimeRemaining } from "./countdownSlice";
+import { setTargetDate, setCurrentTime, 
+  // selectTargetDate, selectCurrentTime, checkAndUpdateTime, 
+  selectTimeRemaining } from "./countdownSlice";
 
 const Countdown = () => {
   const dispatch = useDispatch();
