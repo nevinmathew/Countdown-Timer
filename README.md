@@ -10,21 +10,6 @@ A simple countdown timer built using React and Redux toolkit. This project demon
 - Persists the countdown across page reloads using local storage.
 - Configured with Vite for efficient development.
 
-## Usage
-
-To use this countdown timer in your React application, follow these steps:
-
-1. Install the necessary dependencies:
-   ```bash
-   npm install react-redux
-   ```
-
-2. Import the Countdown component into your project:
-   ```bash
-    import Countdown from './Countdown';
-   ```
-3.  Place the <Countdown /> component wherever you want the countdown to appear in your application.
-
 ## Configuration
 
 The project is configured with Vite for fast and optimized development. The Vite configuration is located in the vite.config.js file and sets up the development server port to 4200.
