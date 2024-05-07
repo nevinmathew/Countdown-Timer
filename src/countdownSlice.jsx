@@ -1,26 +1,47 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, createAction } from "@reduxjs/toolkit";
+import { createSelector } from 'reselect';
+
+// const setCurrentTimeAction = createAction('countdown/setCurrentTime');
+// const setTargetDateAction = createAction('countdown/setTargetDate');
 
 const countdownSlice = createSlice({
   name: "countdown",
   initialState: {
     timer: {
-        targetDate: null,
-        currentTime: Date.now(),
-    }
+      targetDate: null,
+      currentTime: Date.now(),
+    },
   },
   reducers: {
-    setTargetDate(state, action) {
-      state.timer.targetDate = action.payload;
-    },
     setCurrentTime(state, action) {
       state.timer.currentTime = action.payload;
+    },
+    setTargetDate(state, action) {
+      state.timer.targetDate = action.payload;
     },
   },
 });
 
-export const { setTargetDate, setCurrentTime } = countdownSlice.actions;
+export const { setCurrentTime, setTargetDate } = countdownSlice.actions;
 
 export default countdownSlice.reducer;
+
+export const selectTimer = (state) => state.countdown.timer;
+
+export const selectTargetDate = createSelector(
+  selectTimer,
+  (timer) => timer.targetDate
+);
+
+export const selectCurrentTime = createSelector(
+  selectTimer,
+  (timer) => timer.currentTime
+);
+
+export const selectTimeRemaining = createSelector(
+  [selectTargetDate, selectCurrentTime],
+  (targetDate, currentTime) => calculateTimeRemaining(targetDate, currentTime)
+);
 
 export const calculateTimeRemaining = (targetDate, currentTime) => {
   // Calculate the time remaining until the target date
